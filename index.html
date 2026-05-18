@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Nuestro Refugio ❤️</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:linear-gradient(to bottom, #0d1b2a, #1b263b, #3b0d16);
+      color:white;
+      font-family:'Segoe UI', sans-serif;
+      overflow-x:hidden;
+    }
+
+    .stars{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      background:url('https://i.imgur.com/YKY28eT.png');
+      opacity:0.25;
+      z-index:-1;
+      animation:starsMove 120s linear infinite;
+    }
+
+    @keyframes starsMove{
+      from{
+        transform:translateY(0);
+      }
+      to{
+        transform:translateY(-2000px);
+      }
+    }
+
+    header{
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      flex-direction:column;
+      text-align:center;
+      padding:20px;
+      position:relative;
+    }
+
+    .sunset{
+      position:absolute;
+      bottom:0;
+      left:0;
+      width:100%;
+      height:300px;
+      background:linear-gradient(to top, #6d071a, transparent);
+      opacity:0.8;
+    }
+
+    h1{
+      font-size:4rem;
+      color:#ffb3c1;
+      text-shadow:0 0 15px rgba(255,255,255,0.15);
+      margin-bottom:15px;
+    }
+
+    .heart{
+      color:#ff4d6d;
+      animation:pulse 2s infinite;
+    }
+
+    @keyframes pulse{
+      0%{
+        transform:scale(1);
+      }
+      50%{
+        transform:scale(1.15);
+      }
+      100%{
+        transform:scale(1);
+      }
+    }
+
+    .subtitle{
+      max-width:750px;
+      line-height:1.9;
+      color:#e5e5e5;
+      font-size:1.1rem;
+    }
+
+    .typing{
+      margin-top:25px;
+      overflow:hidden;
+      white-space:nowrap;
+      border-right:2px solid white;
+      width:0;
+      animation:
+      typing 5s steps(40,end) forwards,
+      blink .8s infinite;
+      color:#ffd6e0;
+    }
+
+    @keyframes typing{
+      from{
+        width:0;
+      }
+      to{
+        width:100%;
+      }
+    }
+
+    @keyframes blink{
+      50%{
+        border-color:transparent;
+      }
+    }
+
+    .tranquis-header{
+      margin-top:30px;
+      color:#ffd6e0;
+      font-size:1.1rem;
+      line-height:1.8;
+    }
+
+    .photo{
+      margin-top:45px;
+      display:flex;
+      justify-content:center;
+      width:100%;
+    }
+
+    .photo img{
+      width:320px;
+      max-width:100%;
+      border-radius:25px;
+      border:3px solid rgba(255,255,255,0.1);
+      box-shadow:0 0 40px rgba(0,0,0,0.5);
+      transition:0.4s;
+    }
+
+    .photo img:hover{
+      transform:scale(1.03);
+    }
+
+    section{
+      padding:80px 10%;
+    }
+
+    .card{
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:25px;
+      padding:35px;
+      backdrop-filter:blur(8px);
+      box-shadow:0 0 20px rgba(0,0,0,0.2);
+    }
+
+    h2{
+      color:#ffccd5;
+      margin-bottom:25px;
+      font-size:2rem;
+    }
+
+    p{
+      line-height:1.9;
+      color:#ececec;
+      font-size:1.05rem;
+    }
+
+    .quote{
+      margin-top:18px;
+      color:#ffd6e0;
+      font-style:italic;
+    }
+
+    .grid{
+      margin-top:35px;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:25px;
+    }
+
+    .dream-box{
+      background:rgba(255,255,255,0.04);
+      padding:25px;
+      border-radius:20px;
+      border:1px solid rgba(255,255,255,0.05);
+      transition:0.4s;
+    }
+
+    .dream-box:hover{
+      transform:translateY(-5px);
+      background:rgba(255,255,255,0.06);
+    }
+
+    .mustang{
+      width:100%;
+      height:220px;
+      margin-top:30px;
+      border-radius:20px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      padding:20px;
+      font-size:1.2rem;
+      font-weight:bold;
+      background:
+      linear-gradient(to right, rgba(109,7,26,0.92), rgba(13,27,42,0.92)),
+      url('https://images.unsplash.com/photo-1494976388531-d1058494cdd8?q=80&w=1600&auto=format&fit=crop');
+      background-size:cover;
+      background-position:center;
+      box-shadow:0 0 20px rgba(0,0,0,0.3);
+    }
+
+    .naruto{
+      color:#ffb3c1;
+      font-weight:bold;
+    }
+
+    .footer{
+      padding:60px 20px;
+      text-align:center;
+      color:#c9c9c9;
+      font-size:0.95rem;
+    }
+
+    /* RESPONSIVIDADE MOBILE */
+
+    @media(max-width:768px){
+
+      body{
+        overflow-x:hidden;
+      }
+
+      header{
+        padding:40px 20px;
+        min-height:100vh;
+      }
+
+      h1{
+        font-size:2.4rem;
+        line-height:1.2;
+      }
+
+      .subtitle{
+        font-size:0.98rem;
+        line-height:1.8;
+        padding:0 5px;
+        margin-top:10px;
+      }
+
+      .typing{
+        width:100%;
+        white-space:normal;
+        border:none;
+        animation:none;
+        font-size:0.95rem;
+        line-height:1.6;
+        margin-top:20px;
+      }
+
+      .tranquis-header{
+        font-size:1rem;
+        line-height:1.8;
+        padding:0 10px;
+        margin-top:25px;
+      }
+
+      .photo{
+        margin-top:35px;
+      }
+
+      .photo img{
+  width:100%;
+  max-width:320px;
+  aspect-ratio: 3/4;
+  object-fit:cover;
+  border-radius:25px;
+  border:3px solid rgba(255,255,255,0.1);
+  box-shadow:0 0 40px rgba(0,0,0,0.5);
+  transition:0.4s;
+}
+
+      section{
+        padding:55px 20px;
+      }
+
+      .card{
+        padding:25px 20px;
+        border-radius:22px;
+      }
+
+      h2{
+        font-size:1.7rem;
+        line-height:1.3;
+      }
+
+      p{
+        font-size:0.97rem;
+        line-height:1.9;
+      }
+
+      .quote{
+        font-size:0.96rem;
+        line-height:1.7;
+      }
+
+      .grid{
+        grid-template-columns:1fr;
+        gap:20px;
+      }
+
+      .dream-box{
+        padding:22px;
+      }
+
+      .dream-box h3{
+        font-size:1.1rem;
+      }
+
+      .mustang{
+        height:180px;
+        font-size:1rem;
+        line-height:1.6;
+        padding:20px;
+      }
+
+      .footer{
+        padding:40px 20px;
+        font-size:0.85rem;
+        line-height:1.7;
+      }
+
+      .sunset{
+        height:180px;
+      }
+
+    }
+
+  </style>
+
+</head>
+<body>
+
+<div class="stars"></div>
+
+<header>
+
+  <h1>
+    Mi Sra. Bivolt <span class="heart">❤</span>
+  </h1>
+
+  <p class="subtitle">
+    Entre Pernambuco y Tocantins aprendimos que el amor no siempre necesita muchas palabras.
+    A veces vive en llamadas silenciosas,
+    en fotos aleatorias durante el día,
+    en películas juntos en RAVE,
+    en vídeos enviados de madrugada
+    y en la tranquilidad de saber que alguien piensa en ti incluso a kilómetros de distancia.
+  </p>
+
+  <div class="typing">
+    "Contigo, incluso la distancia se siente como hogar."
+  </div>
+
+  <div class="tranquis-header">
+    — ¿Tranquis? 💙
+    <br>
+    — Tranquis, mi Sra. Bivolt.
+  </div>
+
+  <div class="photo">
+    <img src="SUA-FOTO.png" alt="Nosotros">
+  </div>
+
+  <div class="sunset"></div>
+
+</header>
+
+<section>
+
+  <div class="card">
+
+    <h2>Nuestro pequeño universo 🌙</h2>
+
+    <p>
+      Tú dibujas mundos con tus manos,
+      y yo intento construir uno donde siempre puedas descansar.
+    </p>
+
+    <p style="margin-top:20px;">
+      Aunque somos callados,
+      nuestro amor habla en detalles.
+      En permanencias.
+      En pequeños gestos que terminan significando todo.
+    </p>
+
+    <p class="quote">
+      "Tus pocas palabras siempre consiguen derretirme."
+    </p>
+
+    <p class="quote">
+      "Eres mi llamada favorita después de un día difícil."
+    </p>
+
+    <p class="quote">
+      "Incluso en silencio, contigo nunca me siento solo."
+    </p>
+
+  </div>
+
+</section>
+
+<section>
+
+  <h2>Nuestros sueños ✨</h2>
+
+  <div class="grid">
+
+    <div class="dream-box">
+      <h3>🌅 Atardeceres</h3>
+
+      <p style="margin-top:15px;">
+        Sé cuánto amas el cielo al final de la tarde.
+        Y honestamente...
+        quiero ver cientos de atardeceres contigo todavía.
+      </p>
+    </div>
+
+    <div class="dream-box">
+      <h3>🏡 Nuestro chalé</h3>
+
+      <p style="margin-top:15px;">
+        Algún día tendremos nuestro pequeño chalé fuera del país,
+        quizás en Chile,
+        con frío,
+        lluvia suave
+        y mucha paz.
+      </p>
+    </div>
+
+    <div class="dream-box">
+      <h3>🌧️ Tus miedos</h3>
+
+      <p style="margin-top:15px;">
+        Cuando lleguen las tormentas
+        o esas lluvias fuertes que te asustan,
+        quiero que recuerdes:
+        incluso desde lejos,
+        siempre estaré contigo.
+      </p>
+    </div>
+
+    <div class="dream-box">
+      <h3>🎬 RAVE Nights</h3>
+
+      <p style="margin-top:15px;">
+        Las noches viendo películas contigo
+        se convirtieron en uno de mis lugares favoritos del mundo.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<section>
+
+  <div class="card">
+
+    <h2>Nuestras pequeñas palabras 💙</h2>
+
+    <p>
+      Hay cosas que solo nosotros entendemos.
+      Y entre todas ellas,
+      existe una que siempre logra traerme paz:
+    </p>
+
+    <p class="quote" style="font-size:1.3rem; margin-top:30px;">
+      "¿Tranquis?"
+    </p>
+
+    <p style="margin-top:25px;">
+      Porque a veces no significa solo:
+      “¿Está todo bien?”
+    </p>
+
+    <p style="margin-top:20px;">
+      También significa:
+      <br><br>
+
+      “¿Tu corazón está tranquilo?”
+      <br>
+      “¿Necesitas que me quede contigo?”
+      <br>
+      “¿Quieres descansar conmigo aunque sea en silencio?”
+    </p>
+
+    <p style="margin-top:25px;">
+      Y no importa la distancia...
+      siempre voy a responder:
+    </p>
+
+    <p class="quote" style="font-size:1.2rem;">
+      "Tranquis, mi Sra. Bivolt ❤️"
+    </p>
+
+  </div>
+
+</section>
+
+<section>
+
+  <div class="card">
+
+    <h2>Para mi chica favorita ❤️</h2>
+
+    <p>
+      Como en Naruto,
+      creo que algunas conexiones simplemente están destinadas a existir.
+    </p>
+
+    <p style="margin-top:20px;">
+      No importa la distancia,
+      el tiempo
+      o el miedo.
+    </p>
+
+    <p style="margin-top:20px;">
+      Y si un día la vida se vuelve pesada,
+      quiero ser tu refugio.
+    </p>
+
+    <p class="quote">
+      "Mi lugar favorito siempre será donde estés tú."
+    </p>
+
+    <div class="mustang">
+      Algún día veremos juntos un Mustang rojo oscuro
+      mientras viajamos hacia nuestro futuro.
+    </div>
+
+  </div>
+
+</section>
+
+<section>
+
+  <div class="card">
+
+    <h2>Carta final 💌</h2>
+
+    <p>
+      Gracias por existir de una manera tan única.
+      Gracias por cada llamada,
+      cada foto,
+      cada vídeo
+      y cada momento donde incluso el silencio parecía amor.
+    </p>
+
+    <p style="margin-top:20px;">
+      Puede que a veces nos falten temas de conversación,
+      pero encajamos a la perfección.
+    </p>
+
+    <p class="quote" style="margin-top:25px;">
+      "Mi hogar favorito siempre será escuchar un 'Tranquis?' tuyo."
+    </p>
+
+    <p class="quote">
+      "Te elegiría incluso en otras vidas."
+    </p>
+
+  </div>
+
+</section>
+
+<div class="footer">
+  Hecho con amor, paciencia y saudade. ❤️
+</div>
+
+</body>
+</html>

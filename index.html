@@ -2,356 +2,359 @@
 <html lang="pt-BR">
 <head>
 
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Nuestro Refugio ❤️</title>
+<title>Mi Sra. Bivolt ❤️</title>
 
-  <style>
+<style>
 
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      scroll-behavior:smooth;
-    }
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  scroll-behavior:smooth;
+}
 
-    body{
-      background:linear-gradient(to bottom, #0d1b2a, #1b263b, #3b0d16);
-      color:white;
-      font-family:'Segoe UI', sans-serif;
-      overflow-x:hidden;
-    }
+body{
+  font-family:'Segoe UI', sans-serif;
+  background:linear-gradient(to bottom, #0d1b2a, #1b263b, #3b0d16);
+  color:white;
+  overflow-x:hidden;
+}
 
-    .stars{
-      position:fixed;
-      top:0;
-      left:0;
-      width:100%;
-      height:100%;
-      background:url('https://i.imgur.com/YKY28eT.png');
-      opacity:0.25;
-      z-index:-1;
-      animation:starsMove 120s linear infinite;
-    }
+/* ESTRELAS */
 
-    @keyframes starsMove{
-      from{
-        transform:translateY(0);
-      }
-      to{
-        transform:translateY(-2000px);
-      }
-    }
+.stars{
+  position:fixed;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  background:url('https://i.imgur.com/YKY28eT.png');
+  opacity:0.25;
+  z-index:-1;
+  animation:starsMove 120s linear infinite;
+}
 
-    header{
-      min-height:100vh;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      flex-direction:column;
-      text-align:center;
-      padding:20px;
-      position:relative;
-    }
+@keyframes starsMove{
+  from{
+    transform:translateY(0);
+  }
+  to{
+    transform:translateY(-2000px);
+  }
+}
 
-    .sunset{
-      position:absolute;
-      bottom:0;
-      left:0;
-      width:100%;
-      height:300px;
-      background:linear-gradient(to top, #6d071a, transparent);
-      opacity:0.8;
-    }
+/* INTRO */
 
-    h1{
-      font-size:4rem;
-      color:#ffb3c1;
-      text-shadow:0 0 15px rgba(255,255,255,0.15);
-      margin-bottom:15px;
-    }
+#intro{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100vh;
+  background:
+  linear-gradient(to bottom,
+  rgba(13,27,42,0.96),
+  rgba(59,13,22,0.96));
+  z-index:9999;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:20px;
+  transition:1s;
+}
 
-    .heart{
-      color:#ff4d6d;
-      animation:pulse 2s infinite;
-    }
+.intro-content h1{
+  font-size:4rem;
+  color:#ffd6e0;
+  margin-bottom:20px;
+}
 
-    @keyframes pulse{
-      0%{
-        transform:scale(1);
-      }
-      50%{
-        transform:scale(1.15);
-      }
-      100%{
-        transform:scale(1);
-      }
-    }
+.intro-content p{
+  color:#d6d6d6;
+  margin-bottom:35px;
+  font-size:1.1rem;
+}
 
-    .subtitle{
-      max-width:750px;
-      line-height:1.9;
-      color:#e5e5e5;
-      font-size:1.1rem;
-    }
+.intro-content button{
+  padding:15px 40px;
+  border:none;
+  border-radius:40px;
+  background:#6d071a;
+  color:white;
+  font-size:1rem;
+  cursor:pointer;
+  transition:0.4s;
+  box-shadow:0 0 20px rgba(0,0,0,0.3);
+}
 
-    .typing{
-      margin-top:25px;
-      overflow:hidden;
-      white-space:nowrap;
-      border-right:2px solid white;
-      width:0;
-      animation:
-      typing 5s steps(40,end) forwards,
-      blink .8s infinite;
-      color:#ffd6e0;
-    }
+.intro-content button:hover{
+  transform:scale(1.05);
+  background:#8f0d26;
+}
 
-    @keyframes typing{
-      from{
-        width:0;
-      }
-      to{
-        width:100%;
-      }
-    }
+/* HEADER */
 
-    @keyframes blink{
-      50%{
-        border-color:transparent;
-      }
-    }
+header{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  text-align:center;
+  padding:20px;
+  position:relative;
+}
 
-    .tranquis-header{
-      margin-top:30px;
-      color:#ffd6e0;
-      font-size:1.1rem;
-      line-height:1.8;
-    }
+.sunset{
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:100%;
+  height:300px;
+  background:linear-gradient(to top, #6d071a, transparent);
+  opacity:0.8;
+}
 
-    .photo{
-      margin-top:45px;
-      display:flex;
-      justify-content:center;
-      width:100%;
-    }
+h1{
+  font-size:4rem;
+  color:#ffb3c1;
+  margin-bottom:15px;
+  text-shadow:0 0 15px rgba(255,255,255,0.15);
+}
 
-    .photo img{
-      width:320px;
-      max-width:100%;
-      border-radius:25px;
-      border:3px solid rgba(255,255,255,0.1);
-      box-shadow:0 0 40px rgba(0,0,0,0.5);
-      transition:0.4s;
-    }
+.heart{
+  color:#ff4d6d;
+  animation:pulse 2s infinite;
+}
 
-    .photo img:hover{
-      transform:scale(1.03);
-    }
+@keyframes pulse{
+  0%{transform:scale(1);}
+  50%{transform:scale(1.15);}
+  100%{transform:scale(1);}
+}
 
-    section{
-      padding:80px 10%;
-    }
+.subtitle{
+  max-width:750px;
+  line-height:1.9;
+  color:#ececec;
+  font-size:1.1rem;
+}
 
-    .card{
-      background:rgba(255,255,255,0.05);
-      border:1px solid rgba(255,255,255,0.08);
-      border-radius:25px;
-      padding:35px;
-      backdrop-filter:blur(8px);
-      box-shadow:0 0 20px rgba(0,0,0,0.2);
-    }
+.typing{
+  margin-top:25px;
+  overflow:hidden;
+  white-space:nowrap;
+  border-right:2px solid white;
+  width:0;
+  animation:
+  typing 5s steps(40,end) forwards,
+  blink .8s infinite;
+  color:#ffd6e0;
+}
 
-    h2{
-      color:#ffccd5;
-      margin-bottom:25px;
-      font-size:2rem;
-    }
+@keyframes typing{
+  from{
+    width:0;
+  }
+  to{
+    width:100%;
+  }
+}
 
-    p{
-      line-height:1.9;
-      color:#ececec;
-      font-size:1.05rem;
-    }
+@keyframes blink{
+  50%{
+    border-color:transparent;
+  }
+}
 
-    .quote{
-      margin-top:18px;
-      color:#ffd6e0;
-      font-style:italic;
-    }
+.tranquis-header{
+  margin-top:30px;
+  color:#ffd6e0;
+  font-size:1.1rem;
+  line-height:1.8;
+}
 
-    .grid{
-      margin-top:35px;
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:25px;
-    }
+/* FOTO */
 
-    .dream-box{
-      background:rgba(255,255,255,0.04);
-      padding:25px;
-      border-radius:20px;
-      border:1px solid rgba(255,255,255,0.05);
-      transition:0.4s;
-    }
+.photo{
+  margin-top:45px;
+  width:100%;
+  display:flex;
+  justify-content:center;
+}
 
-    .dream-box:hover{
-      transform:translateY(-5px);
-      background:rgba(255,255,255,0.06);
-    }
-
-    .mustang{
-      width:100%;
-      height:220px;
-      margin-top:30px;
-      border-radius:20px;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      text-align:center;
-      padding:20px;
-      font-size:1.2rem;
-      font-weight:bold;
-      background:
-      linear-gradient(to right, rgba(109,7,26,0.92), rgba(13,27,42,0.92)),
-      url('https://images.unsplash.com/photo-1494976388531-d1058494cdd8?q=80&w=1600&auto=format&fit=crop');
-      background-size:cover;
-      background-position:center;
-      box-shadow:0 0 20px rgba(0,0,0,0.3);
-    }
-
-    .naruto{
-      color:#ffb3c1;
-      font-weight:bold;
-    }
-
-    .footer{
-      padding:60px 20px;
-      text-align:center;
-      color:#c9c9c9;
-      font-size:0.95rem;
-    }
-
-    /* RESPONSIVIDADE MOBILE */
-
-    @media(max-width:768px){
-
-      body{
-        overflow-x:hidden;
-      }
-
-      header{
-        padding:40px 20px;
-        min-height:100vh;
-      }
-
-      h1{
-        font-size:2.4rem;
-        line-height:1.2;
-      }
-
-      .subtitle{
-        font-size:0.98rem;
-        line-height:1.8;
-        padding:0 5px;
-        margin-top:10px;
-      }
-
-      .typing{
-        width:100%;
-        white-space:normal;
-        border:none;
-        animation:none;
-        font-size:0.95rem;
-        line-height:1.6;
-        margin-top:20px;
-      }
-
-      .tranquis-header{
-        font-size:1rem;
-        line-height:1.8;
-        padding:0 10px;
-        margin-top:25px;
-      }
-
-      .photo{
-        margin-top:35px;
-      }
-
-      .photo img{
+.photo img{
   width:100%;
   max-width:320px;
-  aspect-ratio: 3/4;
+  height:auto;
   object-fit:cover;
   border-radius:25px;
   border:3px solid rgba(255,255,255,0.1);
   box-shadow:0 0 40px rgba(0,0,0,0.5);
-  transition:0.4s;
 }
 
-      section{
-        padding:55px 20px;
-      }
+/* SECTIONS */
 
-      .card{
-        padding:25px 20px;
-        border-radius:22px;
-      }
+section{
+  padding:80px 10%;
+}
 
-      h2{
-        font-size:1.7rem;
-        line-height:1.3;
-      }
+.card{
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:25px;
+  padding:35px;
+  backdrop-filter:blur(8px);
+  box-shadow:0 0 20px rgba(0,0,0,0.2);
+}
 
-      p{
-        font-size:0.97rem;
-        line-height:1.9;
-      }
+h2{
+  color:#ffccd5;
+  margin-bottom:25px;
+  font-size:2rem;
+}
 
-      .quote{
-        font-size:0.96rem;
-        line-height:1.7;
-      }
+p{
+  line-height:1.9;
+  color:#ececec;
+  font-size:1.05rem;
+}
 
-      .grid{
-        grid-template-columns:1fr;
-        gap:20px;
-      }
+.quote{
+  margin-top:18px;
+  color:#ffd6e0;
+  font-style:italic;
+}
 
-      .dream-box{
-        padding:22px;
-      }
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:25px;
+  margin-top:35px;
+}
 
-      .dream-box h3{
-        font-size:1.1rem;
-      }
+.dream-box{
+  background:rgba(255,255,255,0.04);
+  padding:25px;
+  border-radius:20px;
+  border:1px solid rgba(255,255,255,0.05);
+}
 
-      .mustang{
-        height:180px;
-        font-size:1rem;
-        line-height:1.6;
-        padding:20px;
-      }
+.mustang{
+  width:100%;
+  height:220px;
+  margin-top:30px;
+  border-radius:20px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:20px;
+  font-size:1.2rem;
+  font-weight:bold;
 
-      .footer{
-        padding:40px 20px;
-        font-size:0.85rem;
-        line-height:1.7;
-      }
+  background:
+  linear-gradient(to right,
+  rgba(109,7,26,0.92),
+  rgba(13,27,42,0.92)),
 
-      .sunset{
-        height:180px;
-      }
+  url('https://images.unsplash.com/photo-1494976388531-d1058494cdd8?q=80&w=1600&auto=format&fit=crop');
 
-    }
+  background-size:cover;
+  background-position:center;
+}
 
-  </style>
+.footer{
+  text-align:center;
+  padding:60px 20px;
+  color:#c9c9c9;
+  font-size:0.95rem;
+}
+
+/* RESPONSIVO */
+
+@media(max-width:768px){
+
+  h1{
+    font-size:2.5rem;
+  }
+
+  .intro-content h1{
+    font-size:2.7rem;
+  }
+
+  .subtitle{
+    font-size:0.98rem;
+    line-height:1.8;
+  }
+
+  .typing{
+    width:100%;
+    white-space:normal;
+    border:none;
+    animation:none;
+  }
+
+  section{
+    padding:55px 20px;
+  }
+
+  .card{
+    padding:25px 20px;
+  }
+
+  h2{
+    font-size:1.7rem;
+  }
+
+  p{
+    font-size:0.97rem;
+  }
+
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .mustang{
+    height:180px;
+    font-size:1rem;
+  }
+
+}
+
+</style>
 
 </head>
+
 <body>
 
 <div class="stars"></div>
+
+<!-- INTRO -->
+
+<div id="intro">
+
+  <div class="intro-content">
+
+    <h1>¿Tranquis? 💙</h1>
+
+    <p>
+      Siempre contigo, mi Sra. Bivolt.
+    </p>
+
+    <button onclick="enterSite()">
+      Entrar
+    </button>
+
+  </div>
+
+</div>
+
+<!-- HEADER -->
 
 <header>
 
@@ -386,6 +389,33 @@
 
 </header>
 
+<!-- CONTADOR -->
+
+<section>
+
+  <div class="card" style="text-align:center;">
+
+    <h2>Nosotros en el tiempo ⏳</h2>
+
+    <p>
+      Incluso lejos, seguimos construyendo algo hermoso.
+    </p>
+
+    <div id="contador"
+    style="
+    margin-top:30px;
+    font-size:1.3rem;
+    line-height:2;
+    color:#ffd6e0;
+    ">
+    </div>
+
+  </div>
+
+</section>
+
+<!-- UNIVERSO -->
+
 <section>
 
   <div class="card">
@@ -409,16 +439,14 @@
     </p>
 
     <p class="quote">
-      "Eres mi llamada favorita después de un día difícil."
-    </p>
-
-    <p class="quote">
       "Incluso en silencio, contigo nunca me siento solo."
     </p>
 
   </div>
 
 </section>
+
+<!-- SONHOS -->
 
 <section>
 
@@ -431,8 +459,7 @@
 
       <p style="margin-top:15px;">
         Sé cuánto amas el cielo al final de la tarde.
-        Y honestamente...
-        quiero ver cientos de atardeceres contigo todavía.
+        Quiero ver cientos de atardeceres contigo todavía.
       </p>
     </div>
 
@@ -452,9 +479,8 @@
       <h3>🌧️ Tus miedos</h3>
 
       <p style="margin-top:15px;">
-        Cuando lleguen las tormentas
-        o esas lluvias fuertes que te asustan,
-        quiero que recuerdes:
+        Cuando lleguen las tormentas o las lluvias fuertes,
+        recuerda:
         incluso desde lejos,
         siempre estaré contigo.
       </p>
@@ -473,6 +499,8 @@
 
 </section>
 
+<!-- TRANQUIS -->
+
 <section>
 
   <div class="card">
@@ -489,7 +517,7 @@
       "¿Tranquis?"
     </p>
 
-    <p style="margin-top:25px;">
+    <p style="margin-top:20px;">
       Porque a veces no significa solo:
       “¿Está todo bien?”
     </p>
@@ -497,17 +525,11 @@
     <p style="margin-top:20px;">
       También significa:
       <br><br>
-
       “¿Tu corazón está tranquilo?”
       <br>
       “¿Necesitas que me quede contigo?”
       <br>
       “¿Quieres descansar conmigo aunque sea en silencio?”
-    </p>
-
-    <p style="margin-top:25px;">
-      Y no importa la distancia...
-      siempre voy a responder:
     </p>
 
     <p class="quote" style="font-size:1.2rem;">
@@ -518,6 +540,10 @@
 
 </section>
 
+
+
+<!-- NARUTO -->
+
 <section>
 
   <div class="card">
@@ -526,13 +552,7 @@
 
     <p>
       Como en Naruto,
-      creo que algunas conexiones simplemente están destinadas a existir.
-    </p>
-
-    <p style="margin-top:20px;">
-      No importa la distancia,
-      el tiempo
-      o el miedo.
+      creo que algunas conexiones simplemente estaban destinadas a existir.
     </p>
 
     <p style="margin-top:20px;">
@@ -553,6 +573,8 @@
 
 </section>
 
+<!-- FINAL -->
+
 <section>
 
   <div class="card">
@@ -560,7 +582,6 @@
     <h2>Carta final 💌</h2>
 
     <p>
-      Gracias por existir de una manera tan única.
       Gracias por cada llamada,
       cada foto,
       cada vídeo
@@ -568,11 +589,11 @@
     </p>
 
     <p style="margin-top:20px;">
-      Puede que a veces nos falten temas de conversación,
-      pero encajamos a la perfección.
+      Puede que seamos introvertidos,
+      pero contigo aprendí que amar también es quedarse.
     </p>
 
-    <p class="quote" style="margin-top:25px;">
+    <p class="quote">
       "Mi hogar favorito siempre será escuchar un 'Tranquis?' tuyo."
     </p>
 
@@ -587,6 +608,61 @@
 <div class="footer">
   Hecho con amor, paciencia y saudade. ❤️
 </div>
+
+<script>
+
+// INTRO
+
+function enterSite(){
+
+  document.getElementById("intro").style.opacity = "0";
+
+  setTimeout(() => {
+
+    document.getElementById("intro").style.display = "none";
+
+  }, 1000);
+
+}
+
+// CONTADOR
+
+const dataRelacionamento = new Date(2026, 1, 20);
+
+function atualizarContador(){
+
+  const agora = new Date();
+
+  const diferenca = agora - dataRelacionamento;
+
+  const dias = Math.floor(
+    diferenca / (1000 * 60 * 60 * 24)
+  );
+
+  const horas = Math.floor(
+    (diferenca / (1000 * 60 * 60)) % 24
+  );
+
+  const minutos = Math.floor(
+    (diferenca / (1000 * 60)) % 60
+  );
+
+  document.getElementById("contador").innerHTML =
+  `
+    💙 ${dias} días juntos
+    <br>
+    🌙 ${horas} horas
+    <br>
+    ✨ ${minutos} minutos compartiendo amor
+  `;
+
+}
+
+atualizarContador();
+
+setInterval(atualizarContador, 60000);
+
+</script>
 
 </body>
 </html>
